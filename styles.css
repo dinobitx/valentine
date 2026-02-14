@@ -1,0 +1,136 @@
+:root {
+  --bg: #fff2f5;
+  --card: #ffffff;
+  --text: #40212c;
+  --accent: #ff4f8a;
+  --accent-dark: #ea2f71;
+  --no: #ffe3ec;
+  --shadow: 0 14px 36px rgba(255, 79, 138, 0.22);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at top, #ffe8f0 0%, var(--bg) 55%);
+}
+
+.app {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: max(20px, env(safe-area-inset-top)) 16px max(20px, env(safe-area-inset-bottom));
+}
+
+.screen {
+  width: min(100%, 440px);
+  display: none;
+  text-align: center;
+  background: var(--card);
+  border-radius: 24px;
+  padding: 24px 16px 28px;
+  box-shadow: var(--shadow);
+  transform: scale(0.98);
+  opacity: 0;
+  transition: opacity 0.32s ease, transform 0.32s ease;
+}
+
+.screen.is-active {
+  display: block;
+  opacity: 1;
+  transform: scale(1);
+}
+
+h1 {
+  margin: 0 0 18px;
+  font-size: clamp(1.55rem, 6vw, 2rem);
+  line-height: 1.2;
+}
+
+.cute-image {
+  width: min(72vw, 280px);
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 20px;
+  border: 2px solid #ffd3e3;
+  background: linear-gradient(135deg, #ffd9e9, #ffeef5);
+}
+
+.actions {
+  margin: 18px auto 0;
+  position: relative;
+  width: min(100%, 360px);
+  min-height: 120px;
+  padding: 8px;
+}
+
+.btn {
+  border: none;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 1.06rem;
+  padding: 14px 22px;
+  cursor: pointer;
+  min-width: 128px;
+  touch-action: manipulation;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.btn:active {
+  filter: brightness(0.98);
+}
+
+.btn-yes {
+  position: absolute;
+  left: 50%;
+  bottom: 8px;
+  transform: translateX(-50%);
+  background: var(--accent);
+  color: white;
+  box-shadow: 0 10px 18px rgba(255, 79, 138, 0.35);
+}
+
+.btn-yes:hover {
+  background: var(--accent-dark);
+}
+
+.btn-no {
+  position: absolute;
+  left: 50%;
+  top: 8px;
+  transform: translateX(-50%);
+  background: var(--no);
+  color: #7a3952;
+}
+
+.note {
+  margin: 14px 0 0;
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+
+.no-transition {
+  transition: none !important;
+}
+
+@media (min-width: 560px) {
+  .screen {
+    padding: 30px 24px 34px;
+  }
+
+  .actions {
+    min-height: 128px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .screen,
+  .btn {
+    transition: none;
+  }
+}

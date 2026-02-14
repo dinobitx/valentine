@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Валентинка</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app" id="app">
+      <section class="screen is-active" id="screen1" aria-live="polite">
+        <h1>Будешь моей валентинкой?</h1>
+        <img
+          class="cute-image"
+          src="assets/cute1.png"
+          alt="Милый котик с сердечком"
+          width="320"
+          height="320"
+        />
+        <div class="actions" id="actions">
+          <button class="btn btn-yes" id="yesBtn" type="button">Да 💖</button>
+          <button class="btn btn-no" id="noBtn" type="button">Нет</button>
+        </div>
+      </section>
+
+      <section class="screen" id="screen2" aria-live="polite">
+        <h1>Я тебя люблю ❤️</h1>
+        <img
+          class="cute-image"
+          src="assets/cute2.png"
+          alt="Милый пёсик с валентинкой"
+          width="320"
+          height="320"
+        />
+        <p class="note">С Днём Святого Валентина!</p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
